@@ -1,3 +1,4 @@
+import salaAzulejo from '../assets/images/sala_azulejo_1951_1790773624240.jpg';
 import React from 'react';
 import { TESTIMONIALS, RESTAURANT_INFO } from '../data/restaurantData.ts';
 import { Heart, Award, Users, Star, Quote } from 'lucide-react';
@@ -50,7 +51,7 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-2xl overflow-hidden border border-[#E7DFD5] shadow-xl">
               <img
-                src="/src/assets/images/sala_azulejo_1951_1790773624240.jpg"
+                src={salaAzulejo}
                 alt="Interior autêntico da Tasquinha com azulejo A Tasca D. Ferreira 1951 e toalhas aos quadrados"
                 className="w-full h-[400px] object-cover"
                 referrerPolicy="no-referrer"
