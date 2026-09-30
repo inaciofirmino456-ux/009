@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Menu, X } from 'lucide-react';
+import { Phone, MessageSquare, Menu, X, Circle } from 'lucide-react';
 import { RESTAURANT_INFO, buildPhoneCallLink } from '../data/restaurantData.ts';
 
 interface NavbarProps {
@@ -10,6 +10,23 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenMessageModal
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const getOpenStatus = () => {
+    const now = new Date();
+    const weekday = now.toLocaleDateString('pt-PT', { weekday: 'long', timeZone: 'Europe/Lisbon' });
+    const current = RESTAURANT_INFO.hours.find(h => h.day.toLowerCase() === weekday.toLowerCase());
+    if (!current || current.hours === 'Encerrado') return { open: false, label: 'Fechado agora' };
+    const match = current.hours.match(/(\\d{2}):(\\d{2})\\s*[–-]\\s*(\\d{2}):(\\d{2})/);
+    if (!match) return { open: false, label: 'Fechado agora' };
+    const [, oh, om, ch, cm] = match;
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(now);
+    const hour = Number(parts.find(p => p.type === 'hour')?.value);
+    const minute = Number(parts.find(p => p.type === 'minute')?.value);
+    const currentMinutes = hour * 60 + minute;
+    return currentMinutes >= Number(oh) * 60 + Number(om) && currentMinutes < Number(ch) * 60 + Number(cm) ? { open: true, label: 'Aberto agora' } : { open: false, label: 'Fechado agora' };
+  };
+
+  const status = getOpenStatus();
 
   return (
     <header className="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E7DFD5] transition-all">
@@ -41,6 +58,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Zone 3: 1-2 Primary Action Buttons */}
         <div className="flex items-center gap-2.5">
+          <div className={`hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold ${status.open ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'}`} aria-label={status.label}>
+            <Circle className="w-2.5 h-2.5 fill-current" />
+            {status.label}
+          </div>
           <a
             href={buildPhoneCallLink('landline')}
             className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-[#4A3F35] bg-[#EFE7DC] hover:bg-[#E4D8C8] rounded-xl transition-colors whitespace-nowrap"
