@@ -1,13 +1,12 @@
 import React from 'react';
 import { RESTAURANT_INFO, buildPhoneCallLink, buildSmsLink, buildEmailLink } from '../data/restaurantData.ts';
-import { Phone, MessageSquare, Mail, Compass } from 'lucide-react';
+import { Phone, MessageSquare, Mail } from 'lucide-react';
 
 interface FooterProps {
   onOpenMessageModal: () => void;
-  onOpenDeployModal: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenMessageModal, onOpenDeployModal }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenMessageModal }) => {
   return (
     <footer className="bg-[#1C1613] text-[#FAF7F2] border-t border-[#332A24]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -52,15 +51,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenMessageModal, onOpenDeploy
                 <a href="#contactos" className="hover:text-white transition-colors">
                   Contactos & Horários
                 </a>
-              </li>
-              <li>
-                <button 
-                  onClick={onOpenDeployModal}
-                  className="hover:text-[#FBBF24] transition-colors inline-flex items-center gap-1 cursor-pointer text-left"
-                >
-                  <Compass className="w-3.5 h-3.5" />
-                  Publicar no Netlify ou Render
-                </button>
               </li>
             </ul>
           </div>
@@ -107,7 +97,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenMessageModal, onOpenDeploy
 
         {/* Bottom Bar: Clean & Quiet */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8C7E72]">
-          <p>© {new Date().getFullYear()} Tasquinha Dom Ferreira. Todos os direitos reservados.</p>
+          <div className="max-w-3xl text-center sm:text-left space-y-2">
+            <p className="text-[#D6C8B8]"><strong>OBS.: Atenção:</strong> os preços estão sujeitos a alterações. Para mais informações, consulte-nos através dos contactos disponíveis neste site.</p>
+            <p>© {new Date().getFullYear()} Tasquinha Dom Ferreira. Todos os direitos reservados.</p>
+          </div>
           <div className="flex items-center gap-4">
             <a 
               href={RESTAURANT_INFO.contacts.facebook}
@@ -117,13 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenMessageModal, onOpenDeploy
             >
               Facebook Oficial
             </a>
-            <span>·</span>
-            <button 
-              onClick={onOpenDeployModal}
-              className="hover:text-white transition-colors cursor-pointer"
-            >
-              Hospedagem & Deploy
-            </button>
+
           </div>
         </div>
 
