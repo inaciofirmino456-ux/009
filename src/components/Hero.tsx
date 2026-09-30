@@ -1,3 +1,4 @@
+import fachadaTasquinha from '../assets/images/fachada_tasquinha_1790773601323.jpg';
 import React from 'react';
 import { MessageSquare, Phone, Mail, MapPin, Star, Calendar, ArrowRight } from 'lucide-react';
 import { RESTAURANT_INFO, buildSmsLink, buildPhoneCallLink, buildEmailLink } from '../data/restaurantData.ts';
@@ -12,7 +13,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMessageModal }) => {
       {/* Background Hero Image with authentic facade photo */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/fachada_tasquinha_1790773601323.jpg"
+          src={fachadaTasquinha}
           alt="Fachada histórica com portas vermelhas da Tasquinha Dom Ferreira em Braga"
           className="w-full h-full object-cover object-center opacity-45 scale-102 transition-transform duration-1000 ease-out"
           referrerPolicy="no-referrer"
