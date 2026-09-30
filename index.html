@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-PT" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasquinha Dom Ferreira | Restaurante Tradicional em Braga desde 1951</title>
+    <meta name="description" content="Sabor autêntico minhoto no coração de Braga desde 1951. Bacalhau à Braga, Arroz de Pato, Polvo à Lagareiro e vinhos regionais. Contacte por chamada, mensagem ou email." />
+    
+    <!-- OpenGraph -->
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:title" content="Tasquinha Dom Ferreira | Gastronomia Tradicional em Braga" />
+    <meta property="og:description" content="Restaurante tradicional minhoto fundado em 1951 em Braga. Especialidades caseiras, porções generosas e ambiente acolhedor. Reservas e contactos diretos." />
+    <meta property="og:site_name" content="Tasquinha Dom Ferreira" />
+    <meta property="og:locale" content="pt_PT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tasquinha Dom Ferreira | Restaurante em Braga" />
+    <meta name="twitter:description" content="Cozinha tradicional portuguesa e minhota desde 1951 em Braga. Contacte-nos e reserve a sua mesa." />
+
+    <!-- Favicon & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Restaurant Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Tasquinha Dom Ferreira",
+      "image": "/src/assets/images/hero_tasquinha_braga_1790772527092.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua de São Vicente, 33-35",
+        "addressLocality": "Braga",
+        "postalCode": "4710-312",
+        "addressCountry": "PT"
+      },
+      "telephone": ["+351 253 262 870", "+351 964 238 128"],
+      "email": "tasquinhadomferreira@gmail.com",
+      "servesCuisine": ["Portuguese", "Minhota", "Regional"],
+      "priceRange": "€€",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sunday"],
+          "opens": "12:00",
+          "closes": "15:30"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "380"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-[#FBF9F5] text-[#241F1C] antialiased selection:bg-[#B45309] selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

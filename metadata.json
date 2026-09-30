@@ -1,0 +1,6 @@
+{
+  "name": "Tasquinha Dom Ferreira",
+  "description": "Restaurante tradicional minhoto em Braga fundado em 1951. Pratos autênticos como Bacalhau à Braga, Arroz de Pato e Polvo à Lagareiro, com contactos diretos por mensagens, chamada e email.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
