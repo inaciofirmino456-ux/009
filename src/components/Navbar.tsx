@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Menu, X, Compass } from 'lucide-react';
+import { Phone, MessageSquare, Menu, X } from 'lucide-react';
 import { RESTAURANT_INFO, buildPhoneCallLink } from '../data/restaurantData.ts';
 
 interface NavbarProps {
   onOpenMessageModal: () => void;
-  onOpenDeployModal: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  onOpenMessageModal,
-  onOpenDeployModal
+  onOpenMessageModal
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -39,14 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a href="#contactos" className="hover:text-[#9A3412] transition-colors">
             Contactos & Localização
           </a>
-          <button
-            onClick={onOpenDeployModal}
-            className="text-xs text-[#8C7E72] hover:text-[#2C241E] transition-colors inline-flex items-center gap-1 cursor-pointer"
-            title="Informações de Publicação no Netlify / Render"
-          >
-            <Compass className="w-3.5 h-3.5" />
-            Publicação
-          </button>
         </nav>
 
         {/* Zone 3: 1-2 Primary Action Buttons */}
@@ -111,16 +101,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               Contactos & Horário
             </a>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenDeployModal();
-              }}
-              className="text-left py-1 text-xs text-[#8C7E72] hover:text-[#2C241E] flex items-center gap-1.5"
-            >
-              <Compass className="w-4 h-4" />
-              Guia de Publicação (Netlify / Render)
-            </button>
           </nav>
           
           <div className="pt-3 border-t border-[#E7DFD5] flex flex-col gap-2">
