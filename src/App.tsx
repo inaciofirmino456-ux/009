@@ -12,13 +12,11 @@ import { AboutSection } from './components/AboutSection.tsx';
 import { ContactSection } from './components/ContactSection.tsx';
 import { Footer } from './components/Footer.tsx';
 import { MessageModal } from './components/MessageModal.tsx';
-import { DeployGuideModal } from './components/DeployGuideModal.tsx';
 import { RESTAURANT_INFO, buildPhoneCallLink, buildSmsLink } from './data/restaurantData.ts';
 import { Phone, MessageSquare } from 'lucide-react';
 
 export default function App() {
   const [messageModalOpen, setMessageModalOpen] = useState(false);
-  const [deployModalOpen, setDeployModalOpen] = useState(false);
   const [selectedDish, setSelectedDish] = useState<string | null>(null);
 
   const handleSelectDishToReserve = (dishName: string) => {
@@ -34,7 +32,6 @@ export default function App() {
           setSelectedDish(null);
           setMessageModalOpen(true);
         }}
-        onOpenDeployModal={() => setDeployModalOpen(true)}
       />
 
       <main className="flex-1">
@@ -74,7 +71,6 @@ export default function App() {
           setSelectedDish(null);
           setMessageModalOpen(true);
         }}
-        onOpenDeployModal={() => setDeployModalOpen(true)}
       />
 
       {/* Modals */}
@@ -86,11 +82,6 @@ export default function App() {
         }}
         initialType="sms"
         selectedDish={selectedDish}
-      />
-
-      <DeployGuideModal
-        isOpen={deployModalOpen}
-        onClose={() => setDeployModalOpen(false)}
       />
 
       {/* Mobile Sticky Quick Action Bar (Under 15% viewport height) */}
