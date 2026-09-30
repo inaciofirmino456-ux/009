@@ -1,3 +1,11 @@
+import arrozPato from '../assets/images/arroz_pato_real_1790777084949.jpg';
+import bacalhauBatatas from '../assets/images/bacalhau_batatas_real_1790777100347.jpg';
+import caldoVerdeFiletes from '../assets/images/caldo_verde_filetes_real_1790777145044.jpg';
+import leiteCreme from '../assets/images/leite_creme_real_1790777068317.jpg';
+import pataniscasEntradas from '../assets/images/pataniscas_entradas_real_1790777116501.jpg';
+import polvoOvos from '../assets/images/polvo_ovos_real_1790777162490.jpg';
+import pratoAssadoLaranja from '../assets/images/prato_assado_laranja_1790773639071.jpg';
+import tabuaEnchidos from '../assets/images/tabua_enchidos_real_1790777130985.jpg';
 /**
  * Dados autênticos da Tasquinha Dom Ferreira (Braga, Portugal)
  */
@@ -73,7 +81,7 @@ export const DISHES: DishItem[] = [
     category: 'principais',
     priceNote: 'Sob consulta',
     description: 'A autêntica travessa de barro da Tasquinha: bacalhau generoso com cebolada dourada, rodeado por batatas às rodelas estaladiças, azeitonas e cenoura ripada.',
-    image: '/src/assets/images/bacalhau_batatas_real_1790777100347.jpg',
+    image: bacalhauBatatas,
     tag: 'Especialidade da Casa',
     highlight: true
   },
@@ -83,7 +91,7 @@ export const DISHES: DishItem[] = [
     category: 'principais',
     priceNote: 'Sob consulta',
     description: 'Travessa rústica de barro com carne suculenta assada no forno, batatinhas novas douradas, couves salteadas e fatias de laranja fresca.',
-    image: '/src/assets/images/prato_assado_laranja_1790773639071.jpg',
+    image: pratoAssadoLaranja,
     tag: 'Prato Emblemático',
     highlight: true
   },
@@ -93,7 +101,7 @@ export const DISHES: DishItem[] = [
     category: 'principais',
     priceNote: 'Sob consulta',
     description: 'Arroz de pato escuro e bem tostado no forno na típica assadeira de barro retangular, rematado com chouriço de carne da casa e raminho de salsa.',
-    image: '/src/assets/images/arroz_pato_real_1790777084949.jpg',
+    image: arrozPato,
     tag: 'Receita Tradicional',
     highlight: true
   },
@@ -103,7 +111,7 @@ export const DISHES: DishItem[] = [
     category: 'principais',
     priceNote: 'Sob consulta',
     description: 'Travessa farta de polvo tenro com batatas a murro da época, couve salteada, ovos cozidos às rodelas e regado com azeite virgem extra.',
-    image: '/src/assets/images/polvo_ovos_real_1790777162490.jpg',
+    image: polvoOvos,
     tag: 'Sabor do Mar',
     highlight: true
   },
@@ -113,7 +121,7 @@ export const DISHES: DishItem[] = [
     category: 'sobremesas',
     priceNote: 'Sob consulta',
     description: 'A sobremesa mais famosa da Tasquinha servida na tradicional malga de barro, com crosta espessa de açúcar bem queimada a ferro em brasa.',
-    image: '/src/assets/images/leite_creme_real_1790777068317.jpg',
+    image: leiteCreme,
     tag: 'Doçaria Regional',
     highlight: true
   },
@@ -123,7 +131,7 @@ export const DISHES: DishItem[] = [
     category: 'entradas',
     priceNote: 'Sob consulta',
     description: 'Pataniscas fofas e estaladiças servidas no prato pintado à mão, com azeitonas temperadas na malguinha de barro.',
-    image: '/src/assets/images/pataniscas_entradas_real_1790777116501.jpg',
+    image: pataniscasEntradas,
     tag: 'Petisco',
     highlight: true
   },
@@ -133,7 +141,7 @@ export const DISHES: DishItem[] = [
     category: 'entradas',
     priceNote: 'Sob consulta',
     description: 'Prancha com seleção de salpicão, presunto fatiado fino, queijo curado, pão de forno rústico e pataniscas acabadas de fritar.',
-    image: '/src/assets/images/tabua_enchidos_real_1790777130985.jpg',
+    image: tabuaEnchidos,
     tag: 'Entrada Completa',
     highlight: false
   },
@@ -143,7 +151,7 @@ export const DISHES: DishItem[] = [
     category: 'especiais',
     priceNote: 'Sob consulta',
     description: 'Púcaro de barro vidrado com caldo verde aveludado com couve fresca, acompanhado de travessa com filetes dourados e limão.',
-    image: '/src/assets/images/caldo_verde_filetes_real_1790777145044.jpg',
+    image: caldoVerdeFiletes,
     tag: 'Menu Tradicional',
     highlight: false
   },
